@@ -43,6 +43,48 @@
           "description": "испытать удачу"
         }
       ]
+    },
+    {
+      "id": "jeetbot",
+      "name": "JeetBot",
+      "commands": [
+        {
+          "triggers": ["!uptime"],
+          "description": "показывает время стрима"
+        },
+        {
+          "triggers": ["!shazam", "!трек", "!песня"],
+          "description": "распознает текущую песню"
+        },
+        {
+          "triggers": ["!top", "!топ"],
+          "description": "показывает топ 10 по сообщениям в чате"
+        },
+        {
+          "triggers": ["!topday", "!топдня"],
+          "description": "показывает топ 10 по сообщениям за сегодня"
+        },
+        {
+          "triggers": ["!tts", "!озвучка"],
+          "description": "выбрать голос для озвучки"
+        },
+        {
+          "triggers": ["!usertop"],
+          "description": "показывает ранг в топе сообщений"
+        },
+        {
+          "triggers": ["!myfirst"],
+          "description": "показывает первое сообщение в чате"
+        },
+        {
+          "triggers": ["!ttsvoice"],
+          "description": "показывает текущий выбранный голос"
+        },
+        {
+          "triggers": ["!ups", "!упс"],
+          "description": "позволяет удалить последнее сообщение, отправленное пользователем"
+        }
+      ]
     }
   ]
 }
