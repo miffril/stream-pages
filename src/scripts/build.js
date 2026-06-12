@@ -4,6 +4,7 @@ const path = require("node:path");
 const projectRoot = path.resolve(__dirname, "../..");
 const dataPath = path.resolve(projectRoot, "src/data/commands.json");
 const cssPath = path.resolve(projectRoot, "src/styles/main.css");
+const faviconPath = path.resolve(projectRoot, "src/favicon.svg");
 const distDir = path.resolve(projectRoot, "dist");
 const distStylesDir = path.resolve(distDir, "styles");
 
@@ -78,11 +79,13 @@ function renderPage(data) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0f16">
   <meta name="description" content="${escapeHtml(data.description || "Команды Twitch-чата")}">
   <title>${escapeHtml(data.title)}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -150,10 +153,11 @@ function run() {
   const data = readJson(dataPath);
   const html = renderPage(data);
 
-  fs.rmSync(distDir, { recursive: true, force: true });
+  fs.mkdirSync(distDir, { recursive: true });
   fs.mkdirSync(distStylesDir, { recursive: true });
 
   fs.copyFileSync(cssPath, path.join(distStylesDir, "main.css"));
+  fs.copyFileSync(faviconPath, path.join(distDir, "favicon.svg"));
   fs.writeFileSync(path.join(distDir, "index.html"), html, "utf8");
 
   console.log("Build complete: dist/index.html");
