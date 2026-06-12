@@ -1,0 +1,14 @@
+{
+  "name": "stream-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Twitch stream chat commands page for GitHub Pages",
+  "scripts": {
+    "validate": "node src/scripts/validate.js",
+    "build": "npm run validate && node src/scripts/build.js",
+    "dev": "npx serve dist"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1"
+  }
+}

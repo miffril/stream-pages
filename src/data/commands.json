@@ -1,0 +1,48 @@
+{
+  "version": "1.0",
+  "title": "Команды Twitch-чата",
+  "description": "Список доступных команд стрима по категориям.",
+  "lastUpdated": "2026-06-12",
+  "categories": [
+    {
+      "id": "basic",
+      "name": "Основные",
+      "commands": [
+        {
+          "triggers": ["!клип", "!clip"],
+          "description": "создать клип"
+        },
+        {
+          "triggers": ["!watchstreak", "!стрикпросмотров"],
+          "description": "зритель с наибольшим стриком просмотров"
+        },
+        {
+          "triggers": ["!deaths", "!смерти"],
+          "description": "список смертей в игре"
+        },
+        {
+          "triggers": ["!deathboard", "!таблицасмертей"],
+          "description": "таблица смертей по играм"
+        },
+        {
+          "triggers": ["!totaldeaths", "!всегосмертей"],
+          "description": "всего смертей в играх"
+        }
+      ]
+    },
+    {
+      "id": "fun",
+      "name": "Fun",
+      "commands": [
+        {
+          "triggers": ["!см", "!cm"],
+          "description": "узнать сантиметры"
+        },
+        {
+          "triggers": ["!рулетка", "!roulette"],
+          "description": "испытать удачу"
+        }
+      ]
+    }
+  ]
+}
